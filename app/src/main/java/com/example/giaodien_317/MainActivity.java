@@ -28,14 +28,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent kq = new Intent(MainActivity.this , ketQua.class);
-                Bundle bundle = new Bundle();
                 String getW = w.getText().toString();
                 String getH = h.getText().toString();
 
                 double dw = Double.parseDouble(getW);
                 double dh = Double.parseDouble(getH);
-                double bmi = dw / ((dh/100)*(dh/100));
-                kq.putExtra("app", bundle);
+                Bundle bundle1 =  new Bundle();
+                bundle1.putDouble("a",dw);
+                bundle1.putDouble("b",dh);
+                kq.putExtra("myName",bundle1);
                 startActivity(kq);
             }
         });
